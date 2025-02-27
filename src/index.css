@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Print styles */
+@media print {
+  body {
+    background-color: white;
+    color: black;
+  }
+  
+  /* Hide UI elements when printing */
+  button, .print-hide {
+    display: none !important;
+  }
+  
+  /* Ensure page breaks don't happen in the middle of elements */
+  .security-question, .recommendations {
+    break-inside: avoid;
+  }
+  
+  /* Add page margins */
+  @page {
+    margin: 2cm;
+  }
+}
